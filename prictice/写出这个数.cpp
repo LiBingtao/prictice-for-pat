@@ -27,6 +27,7 @@ int main()
 			cout << pin[get];
 			break;
 		}
+
 		else {
 			cout << pin[get] << " ";
 		}
