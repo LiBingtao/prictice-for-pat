@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1003.我要通过.cpp">
+    <ClCompile Include="1004. 成绩排名 .cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
