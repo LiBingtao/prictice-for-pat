@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1008. 数组元素循环右移问题.cpp">
+    <ClCompile Include="1009. 说反话.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
