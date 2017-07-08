@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1006. 换个格式输出整数.cpp">
+    <ClCompile Include="1007. 素数对猜想 .cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
