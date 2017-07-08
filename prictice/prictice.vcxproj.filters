@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1009. 说反话.cpp">
+    <ClCompile Include="1010. 一元多项式求导.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
