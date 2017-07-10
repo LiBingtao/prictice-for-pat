@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1011. A+B和C.cpp">
+    <ClCompile Include="1012. 数字分类.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
