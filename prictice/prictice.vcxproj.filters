@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1015. 德才论.cpp">
+    <ClCompile Include="1016. 部分A+B.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
