@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1017. A除以B .cpp">
+    <ClCompile Include="1018. 锤子剪刀布.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
