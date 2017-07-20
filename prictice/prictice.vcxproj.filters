@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1020. 月饼.cpp">
+    <ClCompile Include="1021. 个位数统计.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
