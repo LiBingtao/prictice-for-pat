@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1030. 完美数列.cpp">
+    <ClCompile Include="1031. 查验身份证.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
