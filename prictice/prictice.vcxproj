@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1028. 人口普查.cpp" />
+    <ClCompile Include="1029. 旧键盘.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{5E6ACCA5-8849-4990-86D1-51887EAFF322}</ProjectGuid>
