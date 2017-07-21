@@ -11,9 +11,9 @@ int main()
 		cin >> a[i];
 	}
 	sort(a, a + n);
+	int j = 1;
 	for (int i = 0; i < n; i++) {
-		int j = i;
-		for (; a[j] <= a[i] * p && j < n; j++) {}
+		for (j = j - 1; a[j] <= a[i] * p && j < n; j++) {}
 		if (j - i > max) {
 			max = j - i;
 		}
