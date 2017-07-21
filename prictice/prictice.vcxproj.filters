@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1023. 组个最小数.cpp">
+    <ClCompile Include="1024. 科学计数法.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
