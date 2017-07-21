@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1027. 打印沙漏.cpp">
+    <ClCompile Include="1028. 人口普查.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
