@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1036. 跟奥巴马一起编程.cpp">
+    <ClCompile Include="1037. 在霍格沃茨找零钱.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
