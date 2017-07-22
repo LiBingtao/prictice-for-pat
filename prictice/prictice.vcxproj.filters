@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1032. 挖掘机技术哪家强.cpp">
+    <ClCompile Include="1033. 旧键盘打字.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
