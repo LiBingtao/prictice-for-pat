@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1033. 旧键盘打字.cpp" />
+    <ClCompile Include="1034. 有理数四则运算.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{5E6ACCA5-8849-4990-86D1-51887EAFF322}</ProjectGuid>
