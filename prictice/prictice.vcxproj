@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1043. 输出PATest.cpp" />
+    <ClCompile Include="1044. 火星数字.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{5E6ACCA5-8849-4990-86D1-51887EAFF322}</ProjectGuid>
