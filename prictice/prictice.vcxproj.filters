@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1037. 在霍格沃茨找零钱.cpp">
+    <ClCompile Include="1038. 统计同成绩学生.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
