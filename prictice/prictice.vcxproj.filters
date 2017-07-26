@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1041. 考试座位号.cpp">
+    <ClCompile Include="1042. 字符统计.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
