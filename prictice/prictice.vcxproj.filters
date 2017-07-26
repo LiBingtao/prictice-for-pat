@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1040. 有几个PAT.cpp">
+    <ClCompile Include="1041. 考试座位号.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
