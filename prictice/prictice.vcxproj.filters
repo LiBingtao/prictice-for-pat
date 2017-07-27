@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1055. 集体照.cpp">
+    <ClCompile Include="1056. 组合数的和.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
