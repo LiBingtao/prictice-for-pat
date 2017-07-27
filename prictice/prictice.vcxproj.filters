@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1051. 复数乘法.cpp">
+    <ClCompile Include="1052. 卖个萌.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
