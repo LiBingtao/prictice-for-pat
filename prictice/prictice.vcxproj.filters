@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1045. 快速排序.cpp">
+    <ClCompile Include="1046. 划拳.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
