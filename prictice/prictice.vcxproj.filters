@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1054. 求平均值.cpp">
+    <ClCompile Include="1055. 集体照.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
