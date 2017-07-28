@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1061. 判断题.cpp">
+    <ClCompile Include="1062. 最简分数.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
