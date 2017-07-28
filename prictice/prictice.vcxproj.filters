@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1060. 爱丁顿数.cpp">
+    <ClCompile Include="1061. 判断题.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
