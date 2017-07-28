@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1063. 计算谱半径.cpp">
+    <ClCompile Include="1064. 朋友数.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
