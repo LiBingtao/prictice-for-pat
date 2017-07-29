@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1065. 单身狗.cpp">
+    <ClCompile Include="1066. 图像过滤.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
