@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1068. 万绿丛中一点红.cpp">
+    <ClCompile Include="1069. 微博转发抽奖.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
