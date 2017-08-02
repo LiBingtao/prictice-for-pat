@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1070. 结绳.cpp">
+    <ClCompile Include="..\Advanced Level\1001. A+B Format.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
