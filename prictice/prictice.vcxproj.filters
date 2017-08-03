@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Advanced Level\1010. Radix.cpp">
+    <ClCompile Include="..\Advanced Level\1011. World Cup Betting.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
