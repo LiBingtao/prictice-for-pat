@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1006. Sign In and Sign Out.cpp" />
+    <ClCompile Include="1007. Maximum Subsequence Sum.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{5E6ACCA5-8849-4990-86D1-51887EAFF322}</ProjectGuid>
