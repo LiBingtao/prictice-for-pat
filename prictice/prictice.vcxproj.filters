@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Advanced Level\1008. Elevator.cpp">
+    <ClCompile Include="..\Advanced Level\1009. Product of Polynomials.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
