@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1005. Spell It Right.cpp">
+    <ClCompile Include="1006. Sign In and Sign Out.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
