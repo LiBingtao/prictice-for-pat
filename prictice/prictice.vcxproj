@@ -18,6 +18,9 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Advanced Level\1013. Battle Over Cities.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{5E6ACCA5-8849-4990-86D1-51887EAFF322}</ProjectGuid>
     <RootNamespace>prictice</RootNamespace>
