@@ -9,7 +9,7 @@ int main()
 {
 	int a, b, sum, n, i;
 
-	n = 1, i = 1;
+	n = 1; i = 1;
 	cin >> a >> b;
 	sum = a + b;
 	bool isneg = false;
