@@ -13,7 +13,7 @@ void dfs(int v);
 static int c,n,s,m;
 int main(){
 	fill(e[0], e[0] + 510 * 510, inf);
-    fill(dis, dis + 510, inf);	
+	fill(dis, dis + 510, inf);	
 	cin>>c>>n>>s>>m;
 	for(int i=1;i<=n;i++){cin>>num[i];num[i]=num[i]-c/2;}
 	for(int i = 0; i < m; i++){
@@ -40,7 +40,6 @@ void Dijkstra(){
                 minn = dis[j];
             }
         }
-		cout<<u<<endl;
         if(u == -1) break;
         visit[u] = true;
         for(int v = 0; v <= n; v++) {
