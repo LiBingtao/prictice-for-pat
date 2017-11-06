@@ -30,6 +30,7 @@ int main(){
 			int wait = 0;
 			sort(queue.begin(),queue.end());
 			if (v[i].time<queue[0]) {wait += queue[0] - v[i].time;}
+			else { queuq[0] = v[i].time + v[i].wait;
 			queue[0]+=v[i].wait;
 			total += wait;
 			count++;
