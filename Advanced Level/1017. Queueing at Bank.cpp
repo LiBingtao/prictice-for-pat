@@ -38,7 +38,8 @@ int main(){
 			count++;
 		}
 	}
-	if(count==0){cout<<0<<endl;}
-	printf("%.1f\n",total/count/60);
+	if(count==0){printf("0.0\n");}
+	else
+		printf("%.1f\n",total/count/60);
 	return 0;
 }
