@@ -29,10 +29,7 @@ int main(){
 		if(v[i].time<=17*60*60){
 			int wait = 0;
 			sort(queue.begin(),queue.end());
-			if (v[i].time<8*60*60){
-				wait += 8*60*60 - v[i].time;
-			}
-			if (v[i].time>=60*60*8 && v[i].time<queue[0]) {wait += queue[0] - v[i].time;}
+			if (v[i].time<queue[0]) {wait += queue[0] - v[i].time;}
 			queue[0]+=v[i].wait;
 			total += wait;
 			count++;
