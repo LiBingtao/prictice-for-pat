@@ -2,9 +2,8 @@
 #include<vector>
 #include<algorithm>
 using namespace std;
-bool is_equal(vector<int> a,vector<int>b){
-	int n = a.size();
-	for(int i=0;i<n;i++){
+bool is_equal(vector<int> a,vector<int>b,int size){
+	for(int i=0;i<size;i++){
 		if(a[i]!=b[i]) return false;	
 	}
 	return true;
@@ -18,13 +17,13 @@ int main(){
 		n = n/b;
 	}
 	rb_base = b_base;
+	int size = b_base.size();
 	reverse(rb_base.begin(),rb_base.end());
-	bool result = is_equal(b_base,rb_base);
+	bool result = is_equal(b_base,rb_base,size);
 	if(result){
 		cout<<"Yes"<<endl;	
 	}
 	else cout<<"No"<<endl;
-	int size = b_base.size();
 	for(int i=size-1;i>0;i--){
 		cout<<b_base[i]<<" ";
 	}
