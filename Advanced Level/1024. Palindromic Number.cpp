@@ -1,33 +1,29 @@
-#include<iostream>
-#include<vector>
-#include<algorithm>
+#include <iostream>
+#include <algorithm>
 using namespace std;
-static int num,k,cnk=0;
-bool is_palindromic(int n){
-	int m = 0;
-	vector<int> sn;
-	while(n){
-		sn.push_back(n%10);
-		n = n/10;
-	}
-	for(u_long i=0;i<sn.size();i++){
-		m = m*10 + sn[i];
-	}
-	for(u_long i=0;i<sn.size()/2;i++){
-		if(sn[i]!=sn[sn.size()-1-i]) {if(cnk<k) {num+=m;return false;} else return false; }	
-	}
-	return true;
+string s;
+void add(string t) {
+    int len = s.length(), carry = 0;
+    for(int i = 0; i < len; i++) {
+        s[i] = s[i] + t[i] + carry - '0';
+        carry = 0;
+        if(s[i] > '9') {
+            s[i] = s[i] - 10;
+            carry = 1;
+        }
+    }
+    if(carry) s += '1';
+    reverse(s.begin(), s.end());
 }
-
-int main(){
-	cin>>num>>k;
-	while(cnk<=k){
-		if(is_palindromic(num)){
-			break;	
-		}
-		cnk++;
-	}
-	cout<<num<<endl;
-	cout<<(cnk>k?k:cnk)<<endl;
-	return 0;
+int main() {
+    int cnt, i;
+    cin >> s >> cnt;
+    for(i = 0; i <= cnt; i++) {
+        string t = s;
+        reverse(t.begin(), t.end());
+        if(s == t || i == cnt) break;
+        add(t);
+    }
+    cout << s << endl << i;
+    return 0;
 }
