@@ -11,6 +11,7 @@ bool is_equal(vector<int> a,vector<int>b,int size){
 int main(){
 	int n,b;
 	cin>>n>>b;
+	if(n==0) {cout<<"Yes"<<endl<<0<<endl;return 0;}
 	vector<int> b_base,rb_base;
 	while(n){
 		b_base.push_back(n%b);
