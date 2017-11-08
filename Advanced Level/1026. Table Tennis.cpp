@@ -37,6 +37,7 @@ int main(){
 	}
 	sort(custom,custom+n,cmp1);
 	for (int i=0;i<n;i++){
+		if(custom[i].atime>=21*3600){continue;}
 		int flag=0,mintime=24*60*60;
 		bool av = false;
 		bool avv = false;
