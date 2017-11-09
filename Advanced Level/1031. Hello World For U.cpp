@@ -4,8 +4,8 @@ using namespace std;
 int main(){
 	string str;
 	cin>>str;
-	int n = str.length()+2;
-	int n1 = n / 3;
+	int n = str.length();
+	int n1 = (n+2) / 3;
     	int n2 = n1 + n % 3;
 	int i=0;
 	for(;i<n1-1;i++){
