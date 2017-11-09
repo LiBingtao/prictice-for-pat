@@ -5,7 +5,6 @@ int main(){
 	string str;
 	cin>>str;
 	int n = str.length();
-	int n1,n2;
 	int n1 = n / 3;
     	int n2 = n1 + n % 3;
 	int i=0;
