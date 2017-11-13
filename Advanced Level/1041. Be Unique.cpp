@@ -2,7 +2,7 @@
 using namespace std;
 int main(){
     int n;
-    int lottery[10010],unique[10010];
+    int lottery[100010],unique[10010];
     cin>>n;
     for(int i=0;i<n;i++){
         cin>>lottery[i];
