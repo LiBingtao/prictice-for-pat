@@ -1,27 +1,23 @@
-#include<iostream>
-#include<algorithm>
+#include <cstdio>
 using namespace std;
-int main(){
-    int n,m;
-    cin>>n>>m;
-    int coins[100010];
-    for(int i=0;i<n;i++){
-        cin>>coins[i];
+int a[1001];
+int main() {
+    int n, m, temp;
+    scanf("%d %d", &n, &m);
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &temp);
+        a[temp]++;
     }
-    int flag=0;
-    sort(coins,coins+n);
-    for(int i=0;i<n;i++){
-        if(flag) break;
-        for(int j=i+1;j<n;j++){
-            if(coins[i]+coins[j]==m){
-                cout<<coins[i]<<" "<<coins[j]<<endl;
-                flag = 1;
-                break;
+    for(int i = 0; i < 1001; i++) {
+        if(a[i]) {
+            a[i]--;
+            if(m > i && a[m-i]) {
+                printf("%d %d", i, m - i);
+                return 0;
             }
+            a[i]++;
         }
     }
-    if(!flag){
-        cout<<"No Solution"<<endl;
-    }
+    printf("No Solution");
     return 0;
 }
