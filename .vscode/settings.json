@@ -4,6 +4,7 @@
         "iostream": "cpp",
         "__locale": "cpp",
         "__tree": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "iosfwd": "cpp"
     }
 }
