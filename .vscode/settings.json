@@ -7,6 +7,11 @@
         "map": "cpp",
         "iosfwd": "cpp",
         "iterator": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "locale": "cpp",
+        "algorithm": "cpp",
+        "chrono": "cpp",
+        "limits": "cpp",
+        "ratio": "cpp"
     }
 }
