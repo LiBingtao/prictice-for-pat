@@ -1,20 +1,29 @@
 #include <iostream>
-#include <string>
-#include<iostream>
+#include <vector>
+#include <queue>
 using namespace std;
-void GetMemory( char **p )
-{
-    cout<<p<<endl;
-    cout<<&p<<endl;
-    cout<<*p<<endl;
-}
+struct cmp{
+    bool operator()(int a,int b){
+    return a>b;
+    }
+};
+
 int main(){
-    char a[4] = "aaa";
-    char *str = a;
-    cout<<&a<<endl;
-    cout<<&str<<endl;
-    GetMemory( &str ); 
-    // strcpy( str, "hello world" );
-    // printf( str );
+    priority_queue<int,vector<int>,cmp> q;
+    for(int i=0;i<10;i++){
+        q.push(i);
+    }
+    while(!q.empty()){
+        cout<<q.top()<<" ";
+        q.pop();
+    }
+    cout<<endl;
+    for(int i=9;i>=0;i--){
+        q.push(i);
+    }
+    while(!q.empty()){
+        cout<<q.top()<<" ";
+        q.pop();
+    }
     return 0;
 }
