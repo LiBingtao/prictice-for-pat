@@ -328,3 +328,131 @@ void quicksort(int left,int right)
 
 ### 最短路径
 
+#### Dijkstra
+
+```c++
+const int inf = 99999999;
+const int size = 100;
+vector<int> pre[size];
+int dis[size];
+int e[size][size];
+int root = 0;
+bool visit[size];
+fill(e[0],e[0]+size*size,inf);
+fill(dis,dis+size,inf);
+visit[root] = true;
+dis[root] = 0;
+void Dijkstra(){
+    for(int i=0;i<size;i++){
+        int u=-1,minn=inf;
+        for(int j=0;j<size;j++){
+            if(!visit[j] && dis[j]<minn){
+                minn = dis[j];
+                u = j;
+            }
+        }
+        if(u=-1) return;
+        visit[u] = true;
+        for(int v=0;v<size;v++){
+            if(!visit[v]&&e[u][v]!=inf){
+                if(e[u][v]+dis[u]<dis[v]){
+                    dis[v] = dis[u]+e[u][v];
+                    pre[v].clear();
+                    pre[v].push_back();
+                }else if(e[u][v]+dis[u]==dis[v]){
+                    pre[v].push_back(u);
+                }
+            }
+        }
+    }
+}
+```
+
+#### Floyd算法
+
+```c++
+typedef struct
+{
+    char vertex[VertexNum];                                //顶点表
+    int edges[VertexNum][VertexNum];                       //邻接矩阵,可看做边表
+    int n,e;                                               //图中当前的顶点数和边数
+}MGraph;
+
+void Floyd(MGraph g)
+{
+ 　　int A[MAXV][MAXV];
+ 　　int path[MAXV][MAXV];
+ 　　int i,j,k,n=g.n;
+ 　　for(i=0;i<n;i++){
+    　　for(j=0;j<n;j++)
+    　　{
+             A[i][j]=g.edges[i][j];
+         　　 path[i][j]=-1;
+     　 }
+    }
+ 　　for(k=0;k<n;k++){
+      　　for(i=0;i<n;i++){
+         　　for(j=0;j<n;j++){
+             　　if(A[i][j]>(A[i][k]+A[k][j])){
+                   　　A[i][j]=A[i][k]+A[k][j];
+                   　　path[i][j]=k;
+              　}
+            }
+        }
+    }
+}
+```
+
+### 图和树的遍历
+
+#### DFS
+
+```c++
+vector<int> tree[size];
+vector<int> temppath,path;
+void dfs(int root){
+    if(tree[root].size()==0){
+        temppath.push_back(root);
+        path = temppath;
+        temp.pop_back();
+        return;
+    }
+    temppath.push_back(root);
+    for(int i=0;i<tree[root].size();i++){
+        dfs(tree[root][i]);
+    }
+    temppath.pop_back();
+}
+```
+
+#### BFS
+
+```c++
+queue<int> q;
+vector<int> tree[size];
+bool visit[size];
+void bfs(){
+    q.push_back(root);
+    visit[root] = true;
+    int first=0,last=1,depth=0,cnt=1;
+    while(!q.empty()){
+        int temp = q.front();
+        q.pop();
+        first++;
+        for(int i=0;i<tree[temp].size();i++){
+            if(!visit[tree[temp][i]]){
+                q.push(tree[temp][i]);
+                visit[tree[temp][i]] = true;
+                cnt++;
+            }
+        }
+        if(first==last){
+            last = cnt;
+            dep++;
+        }
+    }
+}
+
+```
+
+### 图的前中后序遍历
