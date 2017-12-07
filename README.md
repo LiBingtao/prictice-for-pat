@@ -455,4 +455,187 @@ void bfs(){
 
 ```
 
-### 图的前中后序遍历
+### 树的前中后序遍历
+
+#### 已知后序与中序输出前序
+
+```c+
+#include <cstdio>
+using namespace std;
+int post[size];
+int in[size];
+void pre(int root, int start, int end) {
+    if(start > end) return ;
+    int i = start;
+    while(i < end && in[i] != post[root]) i++;
+    printf("%d ", post[root]);
+    pre(root - 1 - end + i, start, i - 1);
+    pre(root - 1, i + 1, end);
+}
+
+int main() {
+    pre(size, 0, size);
+    return 0;
+}
+```
+
+#### 已知后序与中序输出层序
+
+```c++
+#include <cstdio>
+#include <vector>
+using namespace std;
+vector<int> post, in, level(100000, -1);
+void pre(int root, int start, int end, int index) {
+    if(start > end) return ;
+    int i = start;
+    while(i < end && in[i] != post[root]) i++;
+    level[index] = post[root];
+    pre(root - 1 - end + i, start, i - 1, 2 * index + 1);
+    pre(root - 1, i + 1, end, 2 * index + 2);
+}
+```
+
+#### 前序后序转中序
+
+```c++
+#include <cstdio>
+#include <vector>
+using namespace std;
+vector<int> ans;
+int *pre, *post, unique = 1;
+int findFromPre (int x, int l, int r) {
+    for (int i = l; i <= r; i++) {
+        if (x == pre[i]) {
+            return i;
+        }
+    }
+    return -1;
+}
+void setIn (int prel, int prer, int postl, int postr) {
+    if (prel == prer) {
+        ans.push_back(pre[prel]);
+        return;
+    }
+    if (pre[prel] == post[postr]) {
+        int x = findFromPre(post[postr - 1], prel + 1, prer);
+        if (x - prel > 1) {
+            setIn(prel + 1, x - 1, postl, postl + x - prel - 2);
+            ans.push_back(post[postr]);
+            setIn(x, prer, postl + x - prel - 2 + 1, postr - 1);
+        } else {
+            unique = 0;
+            ans.push_back(post[postr]);
+            setIn(x, prer, postl + x - prel - 2 + 1, postr - 1);
+        }
+    }
+}
+```
+
+### AVL树
+
+```c++
+struct Node{
+    int val;
+    struct Node *left,*right;
+};
+struct Node* leftRotate(struct Node *tree) {
+    struct Node *temp = tree->right;
+    tree->right = temp->left;
+    temp->left = tree;
+    return temp;
+}
+struct Node* rightRotate(struct Node *tree) {
+    struct Node *temp = tree->left;
+    tree->left = temp->right;
+    temp->right = tree;
+    return temp;
+}
+int getHeight(struct Node *tree) {
+    if (tree == NULL) {
+        return 0;
+    } else {
+        int l = getHeight(tree->left);
+        int r = getHeight(tree->right);
+        return l > r ? l + 1 : r + 1;
+    }
+}
+struct Node* leftRightRotate(struct Node *tree) {
+    tree->left = leftRotate(tree->left);
+    tree = rightRotate(tree);
+    return tree;
+}
+struct Node* rightLeftRotate(struct Node *tree) {
+    tree->right = rightRotate(tree->right);
+    tree = leftRotate(tree);
+    return tree;
+}
+struct Node* insert(struct Node *tree, int val) {
+    if (tree == NULL) {
+        tree = new struct Node();
+        tree->val = val;
+        return tree;
+    }
+    if (tree->val > val) {
+        tree->left = insert(tree->left, val);
+        int l = getHeight(tree->left);
+        int r = getHeight(tree->right);
+        if (l - r >= 2) {
+            if (val < tree->left->val) {
+                tree = rightRotate(tree);
+            } else {
+                tree = leftRightRotate(tree);
+            }
+        }
+    } else {
+        tree->right = insert(tree->right, val);
+        int l = getHeight(tree->left);
+        int r = getHeight(tree->right);
+        if (r - l >= 2) {
+            if (val > tree->right->val) {
+                tree = leftRotate(tree);
+            } else {
+                tree = rightLeftRotate(tree);
+            }
+        }
+    }
+    return tree;
+}
+```
+
+### 并查集
+
+```c++
+int father[10010];
+int visit[10010];
+int find(int a){
+    while(a!=father[a]){
+        father[a] = father[father[a]];
+        a = father[a];
+    }
+    return a;
+}
+void Union(int a,int b){
+    int fa = find(a);
+    int fb = find(b);
+    if(fa!=fb){
+        father[fa] = fb;
+    }
+}
+```
+
+### 树状数组
+
+```c++
+#define lowbit(i)((i)&(-i))
+void update(int x, int v) {
+    for(int i = x; i < maxn; i += lowbit(i))
+        c[i] += v;
+}
+int getsum(int x) {
+    int sum = 0;
+    for(int i = x; i >= 1; i -= lowbit(i))
+        sum += c[i];
+    return sum;
+}
+```
