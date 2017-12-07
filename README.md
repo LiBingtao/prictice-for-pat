@@ -1,13 +1,10 @@
-PAT总结
-=================
+# PAT总结
 
-[toc]
+## PAT中常用的STL容器
 
-# PAT中常用的STL容器
+### 顺序容器
 
-## 顺序容器
-
-### vector
+#### vector
 
 ```c++
 #include<vector>
@@ -26,7 +23,7 @@ for(int i=0;i<length;i++)
 }
 ```
 
-### queue
+#### queue
 
 ```c++
 #include<queue>
@@ -39,7 +36,7 @@ q.empty(); //判断队列是否为空
 q.size(); //队列元素个数
 ```
 
-### priority_queue
+#### priority_queue
 
 ```c++
 #include <iostream>
@@ -80,7 +77,7 @@ int main(){
 }
 ```
 
-### stack
+#### stack
 
 ```c++
 #include<stack>
@@ -92,9 +89,9 @@ s.empty(); //判断栈是否为空
 s.size(); //栈元素个数
 ```
 
-## 关联容器
+### 关联容器
 
-### map
+#### map
 
 ```c++
 #include<map>
@@ -124,7 +121,7 @@ for(map<int,string>::iterator iter = map1.begin();iter!=map1.end();iter++)
 }
 ```
 
-### set
+#### set
 
 ```c++
 #include<map>
@@ -144,3 +141,190 @@ while(iter!=set_str.end())
     ++iter;  
 }  
 ```
+
+## PAT常用算法
+
+### 排序
+
+#### STL函数
+
+```c++
+bool cmp(){}
+sort(begin,end,cmp);
+```
+
+#### 冒泡排序
+
+```c++
+void BubbleSort(int A[], int n)
+{
+    for (int j = 0; j < n - 1; j++)         // 每次最大元素就像气泡一样"浮"到数组的最后
+    {
+        for (int i = 0; i < n - 1 - j; i++) // 依次比较相邻的两个元素,使较大的那个向后移
+        {
+            if (A[i] > A[i + 1])            // 如果条件改成A[i] >= A[i + 1],则变为不稳定的排序算法
+            {
+                swap(A[i], a[i+1]);
+            }
+        }
+    }
+}
+```
+
+#### 插入排序
+
+```c++
+void InsertionSort(int A[], int n)
+{
+    for (int i = 1; i < n; i++)         // 类似抓扑克牌排序
+    {
+        int get = A[i];                 // 右手抓到一张扑克牌
+        int j = i;                  // 拿在左手上的牌总是排序好的
+        while (j >0 && A[j-1] > get)    // 将抓到的牌与手牌从右向左进行比较
+        {
+            A[j] = A[j-1];            // 如果该手牌比抓到的牌大，就将其右移
+            j--;
+        }
+        A[j] = get; // 直到该手牌比抓到的牌小(或二者相等)，将抓到的牌插入到该手牌右边(相等元素的相对次序未变，所以插入排序是稳定的)
+    }
+}
+```
+
+#### 希尔排序
+
+```c++
+#include <stdio.h>  
+
+// 分类 -------------- 内部比较排序
+// 数据结构 ---------- 数组
+// 最差时间复杂度 ---- 根据步长序列的不同而不同。已知最好的为O(n(logn)^2)
+// 最优时间复杂度 ---- O(n)
+// 平均时间复杂度 ---- 根据步长序列的不同而不同。
+// 所需辅助空间 ------ O(1)
+// 稳定性 ------------ 不稳定
+
+void ShellSort(int A[], int n)
+{
+    int h = 0;
+    while (h <= n)                          // 生成初始增量
+    {
+        h = 3 * h + 1;
+    }
+    while (h >= 1)
+    {
+        for (int i = h; i < n; i++)
+        {
+            int j = i - h;
+            int get = A[i];
+            while (j >= 0 && A[j] > get)
+            {
+                A[j + h] = A[j];
+                j = j - h;
+            }
+            A[j + h] = get;
+        }
+        h = (h - 1) / 3;                    // 递减增量
+    }
+}
+```
+
+#### 归并排序
+
+```c++
+void Merge(int A[], int left, int mid, int right)// 合并两个已排好序的数组A[left...mid]和A[mid+1...right]
+{
+    int len = right - left + 1;
+    int *temp = new int[len];       // 辅助空间O(n)
+    int index = 0;
+    int i = left;                   // 前一数组的起始元素
+    int j = mid + 1;                // 后一数组的起始元素
+    while (i <= mid && j <= right)
+    {
+        temp[index++] = A[i] <= A[j] ? A[i++] : A[j++];  // 带等号保证归并排序的稳定性
+    }
+    while (i <= mid)
+    {
+        temp[index++] = A[i++];
+    }
+    while (j <= right)
+    {
+        temp[index++] = A[j++];
+    }
+    for (int k = 0; k < len; k++)
+    {
+        A[left++] = temp[k];
+    }
+}
+
+void MergeSortRecursion(int A[], int left, int right)    // 递归实现的归并排序(自顶向下)
+{
+    if (left == right)    // 当待排序的序列长度为1时，递归开始回溯，进行merge操作
+        return;
+    int mid = (left + right) / 2;
+    MergeSortRecursion(A, left, mid);
+    MergeSortRecursion(A, mid + 1, right);
+    Merge(A, left, mid, right);
+}
+```
+
+#### 堆排序
+
+```c++
+// 分类 -------------- 内部比较排序
+// 数据结构 ---------- 数组
+// 最差时间复杂度 ---- O(nlogn)
+// 最优时间复杂度 ---- O(nlogn)
+// 平均时间复杂度 ---- O(nlogn)
+// 所需辅助空间 ------ O(1)
+// 稳定性 ------------ 不稳定
+priority_queue<int> q;
+void HeapSort(int A[], int n)
+{
+    int heap_size = BuildHeap(A, n);    // 建立一个最大堆
+    while (q.size() > 0)    　　　　　　 // 堆（无序区）元素个数大于1，未完成排序
+    {
+        cout<<q.top();
+        q.pop();
+    }
+}
+```
+
+#### 快速排序
+
+```c++
+#include <stdio.h>
+int a[101],n;//定义全局变量，这两个变量需要在子函数中使用
+void quicksort(int left,int right)
+{
+    int i,j,t,temp;
+    if(left>right)
+       return;
+    temp=a[left]; //temp中存的就是基准数
+    i=left;
+    j=right;
+    while(i!=j)
+    {
+        //顺序很重要，要先从右边开始找
+        while(a[j]>=temp && i<j)
+                j--;
+        //再找右边的
+        while(a[i]<=temp && i<j)
+                i++;
+        //交换两个数在数组中的位置
+        if(i<j)
+        {
+                t=a[i];
+                a[i]=a[j];
+                a[j]=t;
+        }
+    }
+    //最终将基准数归位
+    a[left]=a[i];
+    a[i]=temp;
+    quicksort(left,i-1);//继续处理左边的，这里是一个递归的过程 
+    quicksort(i+1,right);//继续处理右边的 ，这里是一个递归的过程 
+}
+```
+
+### 最短路径
+
