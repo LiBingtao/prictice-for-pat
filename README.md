@@ -767,3 +767,13 @@ for(int i=0;i*i<size;i++){
     }
 }
 ```
+
+### 字符串处理
+
+```c++
+string a = "123456";
+int b = stoi(a); //convert int to string
+string c = to_string(b); //convert string to int
+sscanf(a,"%d",b); //从字符串a读进int类型的数据并放入b
+sprintf(c,"%05d",b); //将b按格式化写入c
+```
