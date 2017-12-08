@@ -639,3 +639,27 @@ int getsum(int x) {
     return sum;
 }
 ```
+
+### 01背包问题
+
+```c+
+int w[10010], dp[10010], v[10010];
+bool choice[10010][10010];
+int cmp1(int a, int b){return a > b;}
+int main(){
+    int n,m;
+    cin>>n>>m;
+    for(int i=1;i<=n;i++){
+        cin>>w[i];
+        cin>>v[i];
+    }
+    for(int i=1;i<=n;i++){
+        for(int j=m;j>=w[i];j--){
+            if(dp[j]<=dp[j-w[i]]+v[i]){
+                dp[j] = dp[j-w[i]]+v[i];
+            }
+        }
+    }
+    return 0;
+}
+```
