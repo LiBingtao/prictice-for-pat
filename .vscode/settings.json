@@ -22,6 +22,14 @@
         "deque": "cpp",
         "queue": "cpp",
         "set": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "__bit_reference": "cpp",
+        "initializer_list": "cpp",
+        "__config": "cpp",
+        "__nullptr": "cpp",
+        "exception": "cpp",
+        "new": "cpp",
+        "stdexcept": "cpp",
+        "typeinfo": "cpp"
     }
 }
