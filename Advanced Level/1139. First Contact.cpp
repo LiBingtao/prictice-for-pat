@@ -11,59 +11,25 @@ int n,m,s,d,k;
 bool visit[10000];
 vector<int> path;
 vector<node> res;
-void dfs1(int root,int dep){
-    if(dep==3){
-        if(root==d&&dep==3){
-            if(e[path[2]][d]==1){
+void find(int same){
+    vector<int> x,y;
+    if(v[s].size()==0||v[d].size()==0) return;
+    for(int i=0;i<v[s].size();i++){
+        if(e[s][v[s][i]]==1&&v[s][i]!=d) x.push_back(v[s][i]);
+    }
+    for(int i=0;i<v[d].size();i++){
+        if(e[d][v[d][i]]==1&&v[d][i]!=s) y.push_back(v[d][i]);
+    }
+    for(int i=0;i<x.size();i++){
+        for(int j=0;j<y.size();j++){
+            if(e[x[i]][y[j]]==same){
                 node temp;
-                temp.a = path[1];
-                temp.b = path[2];
+                temp.a = x[i];
+                temp.b = y[j];
                 res.push_back(temp);
             }
         }
-        return;
     }
-    for(int i=0;i<v[root].size();i++){
-        if(dep==0){
-            if(e[root][v[root][i]]==1&&!visit[v[root][i]]){
-                path.push_back(v[root][i]);
-                visit[v[root][i]] = true;
-                dfs1(v[root][i],dep+1);
-                visit[v[root][i]] = false;
-                path.pop_back();
-            }
-        }else{
-            if(!visit[v[root][i]]){
-                path.push_back(v[root][i]);
-                visit[v[root][i]] = true;
-                dfs1(v[root][i],dep+1);
-                visit[v[root][i]] = false;
-                path.pop_back();
-            }
-        }
-    }
-}
-void dfs2(int root,int dep){
-    if(dep==3){
-        if(root==d){
-            node temp;
-            temp.a = path[1];
-            temp.b = path[2];
-            res.push_back(temp);
-        }
-        return;
-    }
-    
-    for(int i=0;i<v[root].size();i++){
-        if(e[root][v[root][i]]==1&&!visit[v[root][i]]){
-            path.push_back(v[root][i]);
-            visit[v[root][i]] = true;
-            dfs2(v[root][i],dep+1);
-            visit[v[root][i]] = false;
-            path.pop_back();
-        }
-    }
-    
 }
 int main(){
     cin>>n>>m;
@@ -93,12 +59,17 @@ int main(){
         d = abs(b);
         visit[s]=true;
         path.push_back(s);
-        if(a*b>=0){
-            dfs2(s,0);
-        }else{
-            dfs1(s,0);
+        if(a==0){
+            if(b>0) find(1);
+            else find(-1);
+        }else if(b==0){
+            if(a>0) find(1);
+            else find(-1);
+        }else if(a*b>0){
+            find(1);
+        }else {
+            find(-1);
         }
-        
         cout<<res.size()<<endl;
         for(int i=0;i<res.size();i++){
             printf("%04d %04d\n",res[i].a,res[i].b);
