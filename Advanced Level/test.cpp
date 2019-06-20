@@ -1,21 +1,31 @@
 #include<iostream>
-#include<cstdio>
-#include<string.h>
 using namespace std;
-struct student{
-    int g,gp,gm,gf;
-    char id[21];
-};
-student stu[10001];
+
 int main(){
-    for(int i=0;i<10001;i++){
-        stu[i].gp = stu[i].gm = stu[i].gf=-1;
+	int n;
+    cin>>n;
+    int a[100000];
+    for(int i=0;i<n;i++){
+    	cin>>a[i];
     }
-    for(int i=0;i<10001;i++){
-        char a[21];
-        scanf("%s",a);
-        strcpy(stu[i].id,a);
-        printf("%s\n%s\n",stu[i].id,a);
+    int b[100000];
+    int max = 0, res = 0, index = 0;
+    for(int i=0;i<n;i++){
+        int cnt=0;
+        for(int j=i+1;j<n;j++){
+        	if(a[j]<a[i]){
+            	cnt++;
+            }
+        }
+        b[i]=cnt;
     }
+    for(int i=0;i<n;i++){
+     	if((b[i]-i)>max){
+        	max = b[i] - i;
+            index = i;
+        }   
+        res += b[i];
+    }
+    cout<<res-max<<" "<<index<<endl;
     return 0;
 }

@@ -30,6 +30,8 @@
         "exception": "cpp",
         "new": "cpp",
         "stdexcept": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "atomic": "cpp",
+        "system_error": "cpp"
     }
 }
